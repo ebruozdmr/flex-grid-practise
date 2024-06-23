@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlexGrid</title>
+    <style>
+      .container {
+        display: flex;
+        /*flex-wrap: wrap;  Küçük ekran boyutlarında item'lar ekrana sığmadığında scroll çıkmasını engeller. */
+        /* flex-direction: column; */
+        /* align-items: center;  y ekseninde hizalama */
+        /*justify-content: center;   x ekseninde hizalama */
+        gap: 10px;
+      }
+      .item {
+        background: lightblue;
+        color: white;
+        padding: 10px;
+        width: 350px;
+        flex-grow: 1; /*  display: grid;grid-template-columns: auto auto auto auto; */
+      }
+      .item1 {
+        /* align-self: flex-end; */
+        order: 10;
+      }
+      .item2 {
+        /*flex-basis: 500px;  Elementin başlangıç boyutunu verir ancak bu boyut sabit değildir, ekran boyutuna göre değişir. */
+        /*flex-shrink: 0;  Ekranda boş alan olmadığında elementin boyutunun nasıl küçülmesi gerektiğini belirler.  */
+        flex-shrink: 3; /*Bu öge ekran boyutu küçüldükçe diğer ögelere nazaran 3 kat daha hızlı küçülmeye başlar.  */
+      }
+      .item3 {
+        order: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item item1">1</div>
+      <div class="item item2">2</div>
+      <div class="item item3">3</div>
+      <!-- <div class="item item4">4</div>
+      <div class="item item5">5</div>
+      <div class="item item6">6</div>
+      <div class="item item7">7</div>
+      <div class="item item8">8</div>
+      <div class="item item9">9</div>
+      <div class="item item10">10</div> -->
+    </div>
+  </body>
+</html>
